@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vektorel.Web.App", "Vektorel.Web.App\Vektorel.Web.App.csproj", "{4E7F4E7C-63F5-4523-A75C-28A54229B17E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E7F4E7C-63F5-4523-A75C-28A54229B17E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E7F4E7C-63F5-4523-A75C-28A54229B17E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E7F4E7C-63F5-4523-A75C-28A54229B17E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E7F4E7C-63F5-4523-A75C-28A54229B17E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C095F9CB-430B-4AD4-A4F1-2F3C56682B99}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,81 @@
+﻿@model ProductViewModel
+
+<div class="container mt-4">
+    <h3 class="mb-4">Ürün Listesi</h3>
+
+    <!-- Action Buttons -->
+    <div class="mb-4">
+        <button class="btn btn-success me-2">Ekle</button>
+        <button class="btn btn-primary me-2">Ara</button>
+        <button class="btn btn-warning me-2">Kritik Stok</button>
+        <button class="btn btn-danger me-2">Sil</button>
+        <button class="btn btn-info me-2">Düzenle</button>
+    </div>
+
+    <hr />
+
+    @if (Model.IsTable)
+    {
+        <!-- Product Table -->
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Ürün Adı</th>
+                    <th>Fiyatı</th>
+                    <th>Stok Miktarı</th>
+                    <th>İndirimli Fiyat</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model.Products)
+                {
+                    <tr>
+                        <td>@product.Name</td>
+                        <td>@product.Price</td>
+                        <td>
+                            <span type="button" class="btn btn-light position-relative">
+                                @product.Stock
+                                @if (product.Stock < 15)
+                                {
+                                    <span title="Kritik Seviye" class="position-absolute top-50 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                                        <span class="visually-hidden">New alerts</span>
+                                    </span>
+                                }
+                            </span>
+                        </td>
+                        <td>
+                            @(Math.Round(product.Price * 0.95M, 2)) TL
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+    else
+    {
+        <!-- Product Cards -->
+        <div class="row g-4">
+            @foreach (var product in Model.Products)
+            {
+                <div class="col-md-3">
+                    <div class="card shadow-sm">
+                        <img src="https://picsum.photos/200/300" class="card-img-top" alt="Product Image">
+                        <div class="card-body">
+                            <h5 class="card-title">@product.Name</h5>
+                            <p class="card-text">Fiyat: @product.Price TL</p>
+                            <p class="card-text">Stok: @product.Stock</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">İndirimli Fiyat: @(Math.Round(product.Price * 0.95M, 2)) TL</li>
+                        </ul>
+                        <div class="card-body text-center">
+                            <a href="#" class="btn btn-outline-success btn-sm">Satın Al</a>
+                            <a href="#" class="btn btn-outline-primary btn-sm">Takip Et</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
