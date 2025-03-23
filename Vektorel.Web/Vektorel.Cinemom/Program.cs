@@ -1,3 +1,5 @@
+using Vektorel.Cinemom.Services;
+
 namespace Vektorel.Cinemom
 {
     public class Program
@@ -7,7 +9,7 @@ namespace Vektorel.Cinemom
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllersWithViews()
                             .AddRazorRuntimeCompilation();
-
+            builder.Services.AddSingleton<MovieRepository>();
             var app = builder.Build();
             if (!app.Environment.IsDevelopment())
             {

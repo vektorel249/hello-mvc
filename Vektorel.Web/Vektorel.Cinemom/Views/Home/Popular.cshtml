@@ -1,1 +1,10 @@
-﻿En çok izlenenler
+﻿@model List<Vektorel.Cinemom.Models.Entities.Movie>
+
+<div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        @foreach (var movie in Model)
+        {
+            <partial name="_MovieCard" for="@movie"></partial>
+        }
+    </div>
+</div>
