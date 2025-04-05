@@ -1,0 +1,2 @@
+Add-Migration Initial -Project Vektorel.GameCenter -Context GameCenterContext -StartUpProject Vektorel.GameCenter
+Update-Database -Project Vektorel.GameCenter -Context GameCenterContext -StartUpProject Vektorel.GameCenter

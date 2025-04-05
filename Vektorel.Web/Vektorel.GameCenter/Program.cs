@@ -1,4 +1,4 @@
-using Vektorel.GameCenter.Data;
+using Vektorel.GameCenter.Common;
 namespace Vektorel.GameCenter;
 
 public class Program
@@ -7,8 +7,11 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
+        var databaseSettings = builder.AddCustomConfig<DatabaseSettings>();
+        builder.AddCustomConfig<PageSettings>();
+
         builder.Services.AddControllersWithViews();
-        builder.Services.AddGameCenterContext(null);
+        builder.Services.AddGameCenterContext(databaseSettings);
 
         var app = builder.Build();
 

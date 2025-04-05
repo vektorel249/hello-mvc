@@ -5,6 +5,10 @@ namespace Vektorel.GameCenter.Data
 {
     public class GameCenterContext : DbContext
     {
+        public GameCenterContext(DbContextOptions<GameCenterContext> options) : base(options)
+        {
+            
+        }
         public DbSet<Game> Games { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Company> Companies { get; set; }

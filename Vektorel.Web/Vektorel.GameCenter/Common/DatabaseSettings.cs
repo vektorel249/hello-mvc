@@ -4,9 +4,4 @@
     {
         public string ConnectionString { get; set; }
     }
-
-    public class PageSettings
-    {
-        public int ItemCount { get; set; }
-    }
 }
