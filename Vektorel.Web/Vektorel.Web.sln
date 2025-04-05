@@ -5,7 +5,9 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vektorel.Web.App", "Vektorel.Web.App\Vektorel.Web.App.csproj", "{4E7F4E7C-63F5-4523-A75C-28A54229B17E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vektorel.Cinemom", "Vektorel.Cinemom\Vektorel.Cinemom.csproj", "{FCECC165-9F13-4B79-8448-016D9D3BA4CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vektorel.Cinemom", "Vektorel.Cinemom\Vektorel.Cinemom.csproj", "{FCECC165-9F13-4B79-8448-016D9D3BA4CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vektorel.GameCenter", "Vektorel.GameCenter\Vektorel.GameCenter.csproj", "{A8E409AC-89A9-4154-96D4-3A191137C09E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{FCECC165-9F13-4B79-8448-016D9D3BA4CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCECC165-9F13-4B79-8448-016D9D3BA4CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCECC165-9F13-4B79-8448-016D9D3BA4CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8E409AC-89A9-4154-96D4-3A191137C09E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8E409AC-89A9-4154-96D4-3A191137C09E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8E409AC-89A9-4154-96D4-3A191137C09E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8E409AC-89A9-4154-96D4-3A191137C09E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
