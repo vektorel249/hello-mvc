@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Vektorel.GameCenter.Common;
 using Vektorel.GameCenter.Data;
+using Vektorel.GameCenter.Services;
 
 namespace Vektorel.GameCenter
 {
@@ -18,6 +19,16 @@ namespace Vektorel.GameCenter
         {
             builder.Services.Configure<T>(builder.Configuration.GetSection(typeof(T).Name));
             return builder.Configuration.GetSection(typeof(T).Name).Get<T>();
+        }
+
+        public static void AddCurrencyService(this IServiceCollection services, TcmbSettings settings)
+        {
+            services.AddScoped<CurrencyService>();
+            services.AddHttpClient(nameof(CurrencyService), client =>
+            {
+                client.BaseAddress = new Uri("https://evds2.tcmb.gov.tr");
+                client.DefaultRequestHeaders.Add("key", settings.ApiKey);
+            });
         }
     }
 }

@@ -8,9 +8,11 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         var databaseSettings = builder.AddCustomConfig<DatabaseSettings>();
+        var tcmbSettings = builder.AddCustomConfig<TcmbSettings>();
         builder.AddCustomConfig<PageSettings>();
 
         builder.Services.AddControllersWithViews();
+        builder.Services.AddCurrencyService(tcmbSettings);
         builder.Services.AddGameCenterContext(databaseSettings);
 
         var app = builder.Build();

@@ -1,0 +1,16 @@
+﻿@model List<CompanyListDto>
+<h3>Oyun Firmaları</h3>
+
+<table class="table">
+    <tr>
+        <th>Adı</th>
+        <th>Ülkesi</th>
+    </tr>
+    @foreach (var company in Model)
+    {
+        <tr>
+            <td>@company.Name</td>
+            <td>@company.Country</td>
+        </tr>
+    }
+</table>

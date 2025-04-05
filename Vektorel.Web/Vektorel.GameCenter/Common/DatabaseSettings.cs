@@ -4,4 +4,9 @@
     {
         public string ConnectionString { get; set; }
     }
+
+    public class TcmbSettings
+    {
+        public string ApiKey { get; set; }
+    }
 }
