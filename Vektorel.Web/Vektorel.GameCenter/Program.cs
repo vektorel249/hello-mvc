@@ -1,4 +1,7 @@
+using Microsoft.AspNetCore.Identity;
 using Vektorel.GameCenter.Common;
+using Vektorel.GameCenter.Data;
+using Vektorel.GameCenter.Entities;
 namespace Vektorel.GameCenter;
 
 public class Program
@@ -12,6 +15,7 @@ public class Program
         builder.AddCustomConfig<PageSettings>();
 
         builder.Services.AddControllersWithViews();
+        
         //builder.Services.AddMemoryCache(); Zaten var MVC'de o sebeple eklemedik
         builder.Services.AddCurrencyService(tcmbSettings);
         builder.Services.AddGameCenterContext(databaseSettings);
@@ -29,6 +33,7 @@ public class Program
 
         app.UseRouting();
 
+        app.UseAuthentication();
         app.UseAuthorization();
 
         app.MapControllerRoute(

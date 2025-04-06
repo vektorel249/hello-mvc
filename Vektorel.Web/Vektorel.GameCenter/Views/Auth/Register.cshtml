@@ -1,0 +1,55 @@
+﻿@model RegisterViewModel
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card shadow-lg rounded">
+                <div class="card-body">
+                    <h4 class="card-title text-center mb-4">Kayıt Ol</h4>
+
+                    @if (ViewBag.Error != null)
+                    {
+                        var errors = ViewBag.Error as List<string>;
+                        <div class="alert alert-danger text-center">
+                            <ul>
+                                @foreach (var error in errors)
+                                {
+                                    <li>@error</li>
+                                }
+                            </ul>
+                        </div>
+                    }
+
+                    <form method="post">
+                        <div class="mb-3">
+                            <label for="fullname" class="form-label">Ad Soyad</label>
+                            <input type="text" asp-for=FullName class="form-control" id="fullname" name="fullname" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-posta</label>
+                            <input type="email" asp-for=EMail class="form-control" id="email" name="email" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Şifre</label>
+                            <input type="password" asp-for=Password class="form-control" id="password" name="password" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Şifre (Tekrar)</label>
+                            <input type="password" asp-for=ConfirmPassword class="form-control" id="confirmPassword" name="confirmPassword" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100">Kayıt Ol</button>
+                    </form>
+
+                    <hr />
+                    <div class="text-center">
+                        <a href="/Auth/Login">Zaten hesabınız var mı? Giriş Yap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

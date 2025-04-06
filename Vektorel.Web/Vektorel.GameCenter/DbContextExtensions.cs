@@ -1,6 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Vektorel.GameCenter.Common;
 using Vektorel.GameCenter.Data;
+using Vektorel.GameCenter.Entities;
 using Vektorel.GameCenter.Services;
 
 namespace Vektorel.GameCenter
@@ -12,6 +14,17 @@ namespace Vektorel.GameCenter
             services.AddDbContext<GameCenterContext>(builder =>
             {
                 builder.UseSqlServer(settings.ConnectionString);
+            });
+
+            services.AddIdentity<User, IdentityRole>()
+                    .AddEntityFrameworkStores<GameCenterContext>()
+                    .AddDefaultTokenProviders();
+
+            services.ConfigureApplicationCookie(config =>
+            {
+                config.LogoutPath = "/Auth/Logout";
+                config.LoginPath = "/Auth/Login";
+                config.AccessDeniedPath = "/Auth/Denied";
             });
         }
 

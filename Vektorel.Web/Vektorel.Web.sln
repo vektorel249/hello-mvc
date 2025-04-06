@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vektorel.Web.App", "Vektore
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vektorel.Cinemom", "Vektorel.Cinemom\Vektorel.Cinemom.csproj", "{FCECC165-9F13-4B79-8448-016D9D3BA4CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vektorel.GameCenter", "Vektorel.GameCenter\Vektorel.GameCenter.csproj", "{A8E409AC-89A9-4154-96D4-3A191137C09E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vektorel.GameCenter", "Vektorel.GameCenter\Vektorel.GameCenter.csproj", "{A8E409AC-89A9-4154-96D4-3A191137C09E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Vektorel.GameCenter.Entities;
 
 namespace Vektorel.GameCenter.Data
 {
-    public class GameCenterContext : DbContext
+    public class GameCenterContext : IdentityDbContext<User>
     {
         public GameCenterContext(DbContextOptions<GameCenterContext> options) : base(options)
         {
@@ -13,5 +14,6 @@ namespace Vektorel.GameCenter.Data
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Company> Companies { get; set; }
         public DbSet<LookUp> LookUps { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

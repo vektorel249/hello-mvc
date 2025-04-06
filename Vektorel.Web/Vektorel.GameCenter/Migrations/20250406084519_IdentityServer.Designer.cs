@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Vektorel.GameCenter.Data;
 
@@ -11,9 +12,11 @@ using Vektorel.GameCenter.Data;
 namespace Vektorel.GameCenter.Migrations
 {
     [DbContext(typeof(GameCenterContext))]
-    partial class GameCenterContextModelSnapshot : ModelSnapshot
+    [Migration("20250406084519_IdentityServer")]
+    partial class IdentityServer
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

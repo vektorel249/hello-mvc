@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Vektorel.GameCenter.Data;
 using Vektorel.GameCenter.Models;
@@ -6,6 +7,7 @@ using Vektorel.GameCenter.Services;
 
 namespace Vektorel.GameCenter.Controllers;
 
+[Authorize]
 public class CompaniesController : Controller
 {
     private readonly GameCenterContext context;
