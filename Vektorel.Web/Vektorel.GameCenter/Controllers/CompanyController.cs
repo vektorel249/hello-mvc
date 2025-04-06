@@ -18,14 +18,15 @@ public class CompaniesController : Controller
     }
     public IActionResult Index()
     {
-        var companies = context.Companies
-                               .Select(s => new CompanyListDto
-                               {
-                                   Name = s.Name,
-                                   Country = s.Country.Name
-                               })
-                               .ToList();
-        var currencies = currencyService.GetLatestCurrencies();
-        return View(companies);
+        var vm = new CompanyViewModel();
+        vm.Companies = context.Companies
+                              .Select(s => new CompanyListDto
+                              {
+                                  Name = s.Name,
+                                  Country = s.Country.Name
+                              })
+                              .ToList();
+        vm.Currency= currencyService.GetLatestCurrencies();
+        return View(vm);
     }
 }

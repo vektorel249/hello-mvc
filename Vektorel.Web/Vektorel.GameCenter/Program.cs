@@ -12,6 +12,7 @@ public class Program
         builder.AddCustomConfig<PageSettings>();
 
         builder.Services.AddControllersWithViews();
+        //builder.Services.AddMemoryCache(); Zaten var MVC'de o sebeple eklemedik
         builder.Services.AddCurrencyService(tcmbSettings);
         builder.Services.AddGameCenterContext(databaseSettings);
 

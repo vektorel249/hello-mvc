@@ -1,12 +1,16 @@
-﻿@model List<CompanyListDto>
+﻿@model CompanyViewModel
 <h3>Oyun Firmaları</h3>
+
+<div class="alert alert-info">
+    Dolar Kuru : @Model.Currency
+</div>
 
 <table class="table">
     <tr>
         <th>Adı</th>
         <th>Ülkesi</th>
     </tr>
-    @foreach (var company in Model)
+    @foreach (var company in Model.Companies)
     {
         <tr>
             <td>@company.Name</td>
